@@ -571,7 +571,7 @@ async def run_viktorin(bot, chat_id, game, subject):
         return
     scores = sorted(game["scores"].items(), key=lambda x: x[1], reverse=True)
     lb = "\n".join([
-        f"{i+1}. {game['players'].get(uid, 'Noma\\'lum')}: {sc} ball"
+       f"{i+1}. {game['players'].get(uid, '?')}: {sc} ball"
         for i, (uid, sc) in enumerate(scores[:5])
     ])
     await bot.send_message(
